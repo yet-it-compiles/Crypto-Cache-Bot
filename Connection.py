@@ -29,6 +29,7 @@ async def on_ready():
         else:
             print("Name's didn't match 🤔")
         print(f'{client.user} has successfully connected to {each_guild.name}! 😁\n')
+        # TODO - Delete this bottom line after client is able to connect
     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="The Trading Charts", url="https://www.tradingview.com/chart/ipFS446E/"))
 
 client.run(BOT_TOKEN)
