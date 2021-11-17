@@ -19,4 +19,8 @@ client = commands.Bot(command_prefix='!', intents=intents)  # defines the symbol
 @client.event
 async def on_ready():
     """ Sets the status of the bot when it connects to the guild """
-    await client.change_presence(activity=discord.Game('RDO - Wagon Stealing'))  # sets the bots activity status
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="The Trading Charts", url="https://www.tradingview.com/chart/ipFS446E/"))
+
+
+# Allows the bot to continually run
+client.run(BOT_TOKEN)
