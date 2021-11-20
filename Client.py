@@ -150,5 +150,14 @@ def remove_all_bots(list_of_members):
     list_of_members.remove("Integromat#3989")
 
 
+@client.command(pass_context = True)
+async def join(ctx):
+  embed = discord.Embed()
+  embed.add_field(name=f"{ctx.message.author.display_name}", value=f"has joined the game", inline=False)
+  await client.say(embed=embed)
+
+
+
+
 # Allows the bot to continually run
 client.run(BOT_TOKEN)
