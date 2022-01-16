@@ -25,17 +25,17 @@ async def on_ready():
 
 
 @client.command()
-async def resources(ctx):
+async def premiumMembership(ctx):
     """
-    Sends an embedded message containing all the resources for the guild
+    Sends an embedded message containing all the premium membership
     :param ctx:
     :return:
     """
 
     # Declaration of embed header
     resource_message = discord.Embed(
-        title="\tResource List",
-        url="https://www.tradingview.com", description="Here are a compilation of resources .... ",
+        title="\tPremium Membership",
+        url="https://www.tradingview.com", description="Are you ready to take your trading to the next level?",
         color=0x4EEDEB)
 
     # This shows the member who called the bot function
@@ -43,12 +43,20 @@ async def resources(ctx):
                                 url="https://www.tradingview.com",
                                 icon_url=ctx.author.avatar_url)
 
-    # Declaration of field headers
-    resource_message.add_field(name="How to setup cornix".title(), value="Please follow the linked guide below",
-                               inline=False)
-    resource_message.add_field(name="Trader view settings".title(), value="Here are my settings used on "
-                                                                          "https://www.tradingview.com", inline=False)
-    resource_message.add_field(name="Blank", value="text", inline=False)
+    resource_message.set_thumbnail(url="https://cdn.discordapp.com/attachments/932108652561711164/932108913900400710/ccp.png")
+
+    resource_message.add_field(name="CryptoCache Premium Offers"
+                               , value="-Daily Bitcoin + Alt Coin Spot Signals\n-Cornix 'One Click Follow' Trading Bot "
+                                       "Functionality\n-Unleveraged, Long and Short positions\n-Day Trades + Swing & "
+                                       "HODL trades"
+                               , inline=True)
+
+    resource_message.add_field(name="CryptoCache Also Includes"
+                               , value="\n-Entry, Profit and Stop Targets\n-Technical Analysis and Trade Set "
+                                       "Ups\n-Best Practice / Market Updates and News \n-Private Telegram Group Chat"
+                               , inline=True)
+
+    resource_message.set_footer(text="\tYou also get direct contact with myself, CryptoCache")
 
     await ctx.send(embed=resource_message)
 
